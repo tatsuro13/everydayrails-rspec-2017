@@ -50,5 +50,13 @@ RSpec.describe User, type: :model do
     expect(user.errors[:email]).to include("has already been taken")
   end
   # ユーザーのフルネームを文字列として返すこと
-  it "returns a user's full name as a string"
+  it "returns a user's full name as a string" do
+    user = User.create(
+      first_name: "John",
+      last_name: "Doe",
+      email: "johndoe@example.com",
+      password: "dottle-nouveau-pavilion-tights-furze",
+    )
+    expect(user.name).to eq 'John Doe'
+  end
 end
