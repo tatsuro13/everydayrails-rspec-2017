@@ -58,4 +58,11 @@ RSpec.describe Note, type: :model do
       end
     end
   end
+  it "delegate name to the user whi created it" do
+    user = double("user", name: "Fake User")
+    note = Note.new
+    allow(note).to receive(:user).and_return(user)
+    expect(note.user_name).to eq "Fake User"
+    # expect(note.user.first_name).to eq "Fake"
+  end
 end
