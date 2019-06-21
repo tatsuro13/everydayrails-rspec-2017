@@ -13,7 +13,7 @@ RSpec.feature "Notes", type: :feature do
     visit project_path(project)
     click_link "Add Note"
     fill_in "Message", with: "My book cover"
-    attach_file "Attachment", "#{Rails.root}/spec/foles/attachment.jpg"
+    attach_file "Attachment", "#{Rails.root}/spec/files/attachment.jpg"
     click_button "Create Note"
     expect(page).to have_content "Note was successfully created"
     expect(page).to have_content "My book cover"
