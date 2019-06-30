@@ -30,6 +30,8 @@ group :development do
 end
 
 group :test do
+  gem "vcr"
+  gem "webmock"
   gem 'capybara', '~> 2.15.4'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
